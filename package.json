@@ -74,5 +74,7 @@
         "@kirrus/adt": "^1.0.0",
         "@kirrus/core": "^1.0.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "ts-adt": "^1.0.1"
+    }
 }
