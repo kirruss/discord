@@ -1,0 +1,29 @@
+{
+    "name": "@kirrus/discord",
+    "version": "1.0.0",
+    "description": "A bindings module of the kirrus framework for discord.js",
+    "keywords": [
+        "kirrus",
+        "framework",
+        "discord.js",
+        "discord",
+        "bot"
+    ],
+    "repository": "https://github.com/kirruss/core",
+    "author": "BlueGhostGH <engisoftleaderoff@gmail.com>",
+    "license": "Unlicense",
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "typings": "dist/esm/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "sideEffects": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {}
+}
