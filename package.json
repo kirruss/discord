@@ -72,7 +72,8 @@
     },
     "peerDependencies": {
         "@kirrus/adt": "^1.0.0",
-        "@kirrus/core": "^1.0.0"
+        "@kirrus/core": "^1.0.0",
+        "discord.js": "^12.3.1"
     },
     "dependencies": {
         "ts-adt": "^1.0.1"
