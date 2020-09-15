@@ -9,7 +9,7 @@
         "discord",
         "bot"
     ],
-    "repository": "https://github.com/kirruss/core",
+    "repository": "https://github.com/kirruss/discord",
     "author": "BlueGhostGH <engisoftleaderoff@gmail.com>",
     "license": "Unlicense",
     "engines": {
