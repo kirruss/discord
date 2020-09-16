@@ -21,6 +21,9 @@ export type Context = ADT<{
     client: Client
 }
 
+/**
+ * A task that handles Discord events
+ */
 export type DiscordPart<I = {}, O = Context & I> = Task<
     Context & I,
     O
