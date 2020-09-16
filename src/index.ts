@@ -29,6 +29,12 @@ export type DiscordPart<I = {}, O = Context & I> = Task<
     O
 >
 
+/**
+ * A helper that sends a message to the channel of the
+ * context message.
+ *
+ * @param message A message to be sent
+ */
 export const send = (
     message: Message["content"]
 ): DiscordPart => async context => {
