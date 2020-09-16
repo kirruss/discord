@@ -35,6 +35,15 @@ export const { message } = generateMatchers(["message"])<
     Context
 >()
 
+/**
+ * The main helper. Used for creating a bot instance that
+ * matches events against a part.
+ *
+ * @param app A part that handles all incoming events
+ * @param options An object that, amongst the regular
+ * options, providing an option for the token and for
+ * whether the bot should listen to itself
+ */
 export const createDiscordBot = async <
     T extends DiscordPart
 >(
