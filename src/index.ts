@@ -9,6 +9,9 @@ interface DiscordOptions extends ClientOptions {
     listenToSelf?: boolean
 }
 
+/**
+ * Event context that gets passed to tasks
+ */
 export type Context = ADT<{
     message: {
         content: Message["content"]
