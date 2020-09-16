@@ -23,6 +23,14 @@ export type DiscordPart<I = {}, O = Context & I> = Task<
     O
 >
 
+export const send = (
+    message: Message["content"]
+): DiscordPart => async context => {
+    context.message.channel.send(message)
+
+    return context
+}
+
 export const { message } = generateMatchers(["message"])<
     Context
 >()
