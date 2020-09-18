@@ -1,7 +1,7 @@
 import { Client, ClientOptions, Message } from "discord.js"
-import type { ADT } from "ts-adt"
+import type { ADT, ADTMember } from "ts-adt"
 
-import { Task } from "@kirrus/core"
+import { Task, EndoTask } from "@kirrus/core"
 import { generateMatchers } from "@kirrus/adt"
 
 interface DiscordOptions extends ClientOptions {
@@ -17,6 +17,7 @@ export type Context = ADT<{
         content: Message["content"]
         message: Message
     }
+    ready: {}
 }> & {
     client: Client
 }
@@ -37,15 +38,18 @@ export type DiscordPart<I = {}, O = Context & I> = Task<
  */
 export const send = (
     message: Message["content"]
-): DiscordPart => async context => {
+): EndoTask<
+    ADTMember<Context, "message">
+> => async context => {
     context.message.channel.send(message)
 
     return context
 }
 
-export const { message } = generateMatchers(["message"])<
-    Context
->()
+export const { message, ready } = generateMatchers([
+    "message",
+    "ready"
+])<Context>()
 
 /**
  * The main helper. Used for creating a bot instance that
@@ -84,6 +88,13 @@ export const createDiscordBot = async <
             client,
             message,
             content: message.content
+        })
+    })
+
+    client.on("ready", () => {
+        return app({
+            _type: "ready",
+            client
         })
     })
 }
