@@ -1,55 +1,9 @@
-import { Client, ClientOptions, Message } from "discord.js"
-import type { ADT } from "ts-adt"
+import { Client } from "discord.js"
 
-import { Task, EndoTask } from "@kirrus/core"
 import { generateMatchers } from "@kirrus/adt"
 
-interface DiscordOptions extends ClientOptions {
-    token: string
-    listenToSelf?: boolean
-}
-
-/**
- * Event context that gets passed to tasks
- */
-export type Context = ADT<{
-    message: {
-        content: Message["content"]
-        message: Message
-    }
-    ready: {}
-}> & {
-    client: Client
-}
-
-/**
- * A task that handles Discord events
- */
-export type DiscordPart<I = {}, O = Context & I> = Task<
-    Context & I,
-    O
->
-
-type ADTMember<ADT, Type extends string> = Extract<
-    ADT,
-    { _type: Type }
->
-
-/**
- * A helper that sends a message to the channel of the
- * context message.
- *
- * @param message A message to be sent
- */
-export const send = (
-    message: Message["content"]
-): EndoTask<
-    ADTMember<Context, "message">
-> => async context => {
-    context.message.channel.send(message)
-
-    return context
-}
+import { Context } from "./Context"
+import { DiscordOptions, DiscordPart } from "./types"
 
 export const { message, ready } = generateMatchers([
     "message",
@@ -103,3 +57,7 @@ export const createDiscordBot = async <
         })
     })
 }
+
+export { Context } from "./Context"
+export * from "./helpers"
+export { DiscordPart } from "./types"
