@@ -1,5 +1,5 @@
 import { Client, ClientOptions, Message } from "discord.js"
-import type { ADT, ADTMember } from "ts-adt"
+import type { ADT } from "ts-adt"
 
 import { Task, EndoTask } from "@kirrus/core"
 import { generateMatchers } from "@kirrus/adt"
@@ -28,6 +28,11 @@ export type Context = ADT<{
 export type DiscordPart<I = {}, O = Context & I> = Task<
     Context & I,
     O
+>
+
+type ADTMember<ADT, Type extends string> = Extract<
+    ADT,
+    { _type: Type }
 >
 
 /**
