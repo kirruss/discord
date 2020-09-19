@@ -58,6 +58,6 @@ export const createDiscordBot = async <
     })
 }
 
-export { Context } from "./Context"
+export { Context, MessageContext } from "./Context"
 export * from "./helpers"
 export { DiscordPart } from "./types"
