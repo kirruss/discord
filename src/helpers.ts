@@ -1,9 +1,8 @@
 import type { Message } from "discord.js"
 
-import type { EndoTask } from "@kirrus/core"
+import { compose, EndoTask, filter } from "@kirrus/core"
 
-import type { Context } from "."
-import type { ADTMember } from "./types"
+import type { Matcher, MessageContext } from "."
 
 /**
  * A helper that sends a message to the channel of the
@@ -13,10 +12,21 @@ import type { ADTMember } from "./types"
  */
 export const send = (
     message: Message["content"]
-): EndoTask<
-    ADTMember<Context, "message">
-> => async context => {
+): EndoTask<MessageContext> => async context => {
     context.message.channel.send(message)
 
     return context
 }
+
+/**
+ * A helper that filters every message context against a
+ * matcher and fails if the matcher returns false.
+ *
+ * @param matcher A matcher to match against
+ * @param task A task which to be run after matching
+ */
+export const matchMessage = (
+    matcher: Matcher,
+    task: EndoTask<MessageContext>
+): EndoTask<MessageContext> =>
+    compose(filter(matcher), task)
