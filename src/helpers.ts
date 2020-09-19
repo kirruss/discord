@@ -1,6 +1,11 @@
 import type { Message } from "discord.js"
 
-import { compose, EndoTask, filter } from "@kirrus/core"
+import {
+    compose,
+    EndoTask,
+    filter,
+    Task
+} from "@kirrus/core"
 
 import type { Matcher, MessageContext } from "."
 
@@ -25,8 +30,7 @@ export const send = (
  * @param matcher A matcher to match against
  * @param task A task which to be run after matching
  */
-export const matchMessage = (
+export const matchMessage = <T>(
     matcher: Matcher,
-    task: EndoTask<MessageContext>
-): EndoTask<MessageContext> =>
-    compose(filter(matcher), task)
+    task: Task<MessageContext, T>
+): Task<MessageContext, T> => compose(filter(matcher), task)
