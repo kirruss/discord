@@ -1102,16 +1102,14 @@
     chalk "^4.0.0"
 
 "@kirrus/adt@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@kirrus/adt/-/adt-1.0.1.tgz#06fe302144d110785e6d6950a9120588cf86db66"
-  integrity sha512-o21ouubkrF5gXU21fO6dY5ulswZCMHboAO94JPF5tLHuX2okOOeM7x8sZaLvyxB9GETOfEmv3xwLF+EpGyXMOw==
-  dependencies:
-    ts-adt "^1.0.1"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@kirrus/adt/-/adt-1.0.2.tgz#3172834b3727872507607d83dbf2f04303164b07"
+  integrity sha512-XHe4noNcP721A3XNjLozbJXTJ0kVOVZoB/cZL/Tx7OwfkpVnf52PuH8PrY6UokqCbhVyh937W0u80rCQtnXMjw==
 
 "@kirrus/core@^1.0.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@kirrus/core/-/core-1.1.1.tgz#051d5a77d0573244b9c45506b78645d2bf18c022"
-  integrity sha512-OZ2SHAYzWsWnzzGeQXidfPG73OM0QhLtr8MnfBkYVlI4aHHOmoynE/7Wf4VV1zLJI8GjQrNnjyvzYSrFbXssAQ==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@kirrus/core/-/core-1.1.2.tgz#c2008b259113f3948b03a2ba7926c998a97fd7aa"
+  integrity sha512-zLbnLOR1s2x9IbZcH/UaBSSq9xtoAIU4s8NiCvY+56HznhIoZdO4qh5vfla0igNt1NH1zbQ/vmH268aGPofdyg==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
