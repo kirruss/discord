@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/kirruss/discord/compare/v1.1.0...v1.1.1) (2020-09-19)
+
+
+### Bug Fixes
+
+* fixed type for matchmessage not taking a generic ([a31e158](https://github.com/kirruss/discord/commit/a31e1581abc3ddbcaf5b579ca44d8d1159bfc64c))
+
 # [1.1.0](https://github.com/kirruss/discord/compare/v1.0.0...v1.1.0) (2020-09-19)
 
 
