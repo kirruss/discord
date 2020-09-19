@@ -60,4 +60,5 @@ export const createDiscordBot = async <
 
 export { Context, MessageContext } from "./Context"
 export * from "./helpers"
+export { Matcher } from "./Matcher"
 export { DiscordPart } from "./types"
