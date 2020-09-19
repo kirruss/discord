@@ -1,5 +1,7 @@
 import type { Client, Message } from "discord.js"
-import type { ADT, ADTMember } from "ts-adt"
+import type { ADT } from "ts-adt"
+
+import type { ADTMember } from "@kirrus/adt"
 
 /**
  * Event context that gets passed to tasks
