@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/kirruss/discord/compare/v1.0.0...v1.1.0) (2020-09-19)
+
+
+### Bug Fixes
+
+* used right adtmember type in the messagecontext type ([71e77aa](https://github.com/kirruss/discord/commit/71e77aa0053e122554762870dcca0815cebdc062))
+
+
+### Features
+
+* added a helper for matching messages ([3307c56](https://github.com/kirruss/discord/commit/3307c563c56fa464846ef4a7628ed15eb5e7a790))
+* added a matcher type ([c5a0e8e](https://github.com/kirruss/discord/commit/c5a0e8e98e04af6db63c0762a3e41d37c8ec620c))
+
 # 1.0.0 (2020-09-19)
 
 
